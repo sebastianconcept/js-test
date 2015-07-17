@@ -8,13 +8,21 @@ function basicAdd ( ) {
 
 function add ( ) {
   var numbers = arguments;
-  var sum = basicAdd.apply( this, numbers );
+  var answer = {};
+  var sum = 
 
-  add.value = function ( ) {
-    return sum;
+  answer.value = function ( ) {
+    return answer.total;
+  };
+  answer.add = function ( ) {
+    var args = arguments;
+    var partial = basicAdd.apply( this, args );
+    answer.total = ( answer.total || 0 ) + partial;
+    return answer;
   };
 
-  add.add = add;
+  answer.add.apply( this, numbers );
 
-  return add;
+  return answer
+  ;
 }
