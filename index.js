@@ -8,7 +8,10 @@ function basicAdd ( ) {
 
 function add ( ) {
   var numbers = arguments;
-  var answer = {};
+  var answer = function () {
+    var args = arguments;
+    return answer.add.apply( this, args );
+  };
   var sum = 
 
   answer.value = function ( ) {
