@@ -9,9 +9,12 @@ function basicAdd ( ) {
 function add ( ) {
   var numbers = arguments;
   var sum = basicAdd.apply( this, numbers );
-  this.value = function ( ) {
+
+  add.value = function ( ) {
     return sum;
   };
 
-  return this
+  add.add = add;
+
+  return add;
 }
