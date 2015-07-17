@@ -17,6 +17,11 @@ function add ( ) {
   answer.value = function ( ) {
     return answer.total;
   };
+
+  answer.valueOf = function () {
+    return answer.total;
+  };
+    
   answer.add = function ( ) {
     var args = arguments;
     var partial = basicAdd.apply( this, args );
